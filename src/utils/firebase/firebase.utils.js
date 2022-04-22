@@ -6,7 +6,13 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  snapshotEqual,
+} from "firebase/firestore";
 
 {
   /** 
@@ -52,8 +58,28 @@ export const createUserDocumentFromAuth = async (userAuth) => {
 
   console.log(userDocRef);
 
-//   Method that shows data if it exists
+  //   Method that shows data if it exists
   const userSnapshot = await getDoc(userDocRef);
   console.log(userSnapshot);
 
+  // if userData does not exist
+  // Create / set the document with the data from userAuth in my collection
+  if (!userSnapshot.exists()) {
+    const { displayName, email } = userAuth;
+    const createdAt = new Date();
+
+    try {
+      await setDoc(userDocRef, {
+        displayName,
+        email,
+        createdAt,
+      });
+    } catch (error) {
+      console.log("error creating the user", error.message);
+    }
+  }
+
+  //   if user data exists
+
+  return userDocRef
 };
