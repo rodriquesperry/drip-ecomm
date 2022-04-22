@@ -1,3 +1,13 @@
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import {
+  getAuth,
+  SignInWIthRedirect,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "firebase/auth";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+
 {
   /** 
     * yarn install firebase
@@ -8,14 +18,6 @@
    
 */
 }
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import {
-  getAuth,
-  SignInWIthRedirect,
-  signInWithPopup,
-  GoogleAuthProvider,
-} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDvshFnxEpVpove9ZHo8xCEA6sVsXCV8ls",
@@ -37,5 +39,21 @@ provider.setCustomParameters({
   prompt: "select_account",
 });
 
+// Sign-in
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+
+// FireStore
+export const db = getFirestore();
+
+// We want to take our information from our Auth and put it in our database using the methods from "firebase/firestore"
+export const createUserDocumentFromAuth = async (userAuth) => {
+  const userDocRef = doc(db, "users", userAuth.uid);
+
+  console.log(userDocRef);
+
+//   Method that shows data if it exists
+  const userSnapshot = await getDoc(userDocRef);
+  console.log(userSnapshot);
+
+};
