@@ -9,6 +9,7 @@ import {
 } from "../../utils/firebase/firebase.utils";
 
 import SignupForm from "../../components/sign-up-form/sign-up-form.component";
+import Button from "../../components/button/button.component";
 
 const SignIn = () => {
   useEffect(() => {
@@ -28,10 +29,9 @@ const SignIn = () => {
   return (
     <div>
       <h1>I am the sign-in page!</h1>
-      <button onClick={logGoogleUser}>Sign In with Google Popup</button>
-      <button onClick={signInWithGoogleRedirect}>
-        Sign in with Google Redirect
-      </button>
+      <Button buttonType="google" onClick={logGoogleUser}>
+        Sign In with Google Popup
+      </Button>
       <SignupForm />
     </div>
   );
