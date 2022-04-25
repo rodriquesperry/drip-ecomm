@@ -1,12 +1,15 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+
 import {
   getAuth,
   signInWithRedirect,
   signInWithPopup,
+  signInWithEmailAndPassword,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
+
 import {
   getFirestore,
   doc,
@@ -52,6 +55,8 @@ export const signInWithGooglePopup = () =>
   signInWithPopup(auth, googleProvider);
 export const signInWithGoogleRedirect = () =>
   signInWithRedirect(auth, googleProvider);
+export const signInWithUserEmailAndPassword = () =>
+  signInWithEmailAndPassword(auth, email, password);
 
 // FireStore
 export const db = getFirestore();
