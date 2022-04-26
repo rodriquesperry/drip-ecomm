@@ -20,7 +20,7 @@ const SignupForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
-  // console.log(formFields);
+  console.log(formFields);
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -46,7 +46,7 @@ const SignupForm = () => {
       if (error.code === "auth/email-already-in-use") {
         alert("Cannot create User, email already in use!");
       }
-      // console.log("user creation encountered an error", error);
+      console.log("user creation encountered an error", error);
     }
   };
 

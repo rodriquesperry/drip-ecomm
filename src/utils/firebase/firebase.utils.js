@@ -55,8 +55,6 @@ export const signInWithGooglePopup = () =>
   signInWithPopup(auth, googleProvider);
 export const signInWithGoogleRedirect = () =>
   signInWithRedirect(auth, googleProvider);
-export const signInWithUserEmailAndPassword = () =>
-  signInWithEmailAndPassword(auth, email, password);
 
 // FireStore
 export const db = getFirestore();
@@ -102,4 +100,11 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
     return;
   }
   return await createUserWithEmailAndPassword(auth, email, password);
+};
+
+export const signInAuthUserWithEmailAndPassword = async (email, password) => {
+  if (!email || !password) {
+    return;
+  }
+  return await signInWithEmailAndPassword(auth, email, password);
 };

@@ -9,8 +9,7 @@ import {
 
 import SignupForm from "../../components/sign-up-form/sign-up-form.component";
 import Button from "../../components/button/button.component";
-import FormInput from "../../components/formInput/form-input.component";
-
+import SignInForm from "../../components/sign-in-form/sign-in-form.component";
 import "./authentication.styles.scss";
 
 const defaultFormFields = {
@@ -18,7 +17,7 @@ const defaultFormFields = {
   password: "",
 };
 
-const SignIn = () => {
+const Authentication = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
@@ -42,16 +41,12 @@ const SignIn = () => {
 
   return (
     <div>
-      <h2>I already have an account</h2>
-      <h4>Sign in with your email and password</h4>
       <div className="sign-in-container">
-        <Button buttonType="google" onClick={logGoogleUser}>
-          Sign In with Google Popup
-        </Button>
+        <SignInForm />
+        <SignupForm />
       </div>
-      <SignupForm />
     </div>
   );
 };
 
-export default SignIn;
+export default Authentication;
