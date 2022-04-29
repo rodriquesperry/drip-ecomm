@@ -8,6 +8,8 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 import {
@@ -66,11 +68,8 @@ export const createUserDocumentFromAuth = async (
 ) => {
   const userDocRef = doc(db, "users", userAuth.uid);
 
-  console.log(userDocRef);
-
   //   Method that shows data if it exists
   const userSnapshot = await getDoc(userDocRef);
-  console.log(userSnapshot);
 
   // if userData does not exist
   // Create / set the document with the data from userAuth in my collection
@@ -108,3 +107,10 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   }
   return await signInWithEmailAndPassword(auth, email, password);
 };
+
+export const signOutUser = async () => await signOut(auth);
+
+// This is always open. Meaning that it constantly looks for a change in the Auth state
+// and the moment it changes it runs the callback
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);
