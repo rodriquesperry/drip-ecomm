@@ -88,7 +88,34 @@ export const createUserDocumentFromAuth = async (
       console.log("error creating the user", error.message);
     }
   }
+  //   if user data exists
 
+  return userDocRef;
+};
+
+export const createProductDocument = async (id, name, imageUrl) => {
+  const userDocRef = doc(db, "users", userAuth.uid);
+
+  //   Method that shows data if it exists
+  const userSnapshot = getDoc(userDocRef);
+
+  // if userData does not exist
+  // Create / set the document with the data from userAuth in my collection
+  if (!userSnapshot.exists()) {
+    const { displayName, email } = userAuth;
+    const createdAt = new Date();
+
+    try {
+      await setDoc(userDocRef, {
+        displayName,
+        email,
+        createdAt,
+        ...additionalInformation,
+      });
+    } catch (error) {
+      console.log("error creating the user", error.message);
+    }
+  }
   //   if user data exists
 
   return userDocRef;
