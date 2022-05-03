@@ -65,39 +65,11 @@ export const db = getFirestore();
 export const createUserDocumentFromAuth = async (
   userAuth,
   additionalInformation
-) => {
+  ) => {
   const userDocRef = doc(db, "users", userAuth.uid);
 
   //   Method that shows data if it exists
   const userSnapshot = await getDoc(userDocRef);
-
-  // if userData does not exist
-  // Create / set the document with the data from userAuth in my collection
-  if (!userSnapshot.exists()) {
-    const { displayName, email } = userAuth;
-    const createdAt = new Date();
-
-    try {
-      await setDoc(userDocRef, {
-        displayName,
-        email,
-        createdAt,
-        ...additionalInformation,
-      });
-    } catch (error) {
-      console.log("error creating the user", error.message);
-    }
-  }
-  //   if user data exists
-
-  return userDocRef;
-};
-
-export const createProductDocument = async (id, name, imageUrl) => {
-  const userDocRef = doc(db, "users", userAuth.uid);
-
-  //   Method that shows data if it exists
-  const userSnapshot = getDoc(userDocRef);
 
   // if userData does not exist
   // Create / set the document with the data from userAuth in my collection
@@ -139,5 +111,4 @@ export const signOutUser = async () => await signOut(auth);
 
 // This is always open. Meaning that it constantly looks for a change in the Auth state
 // and the moment it changes it runs the callback
-export const onAuthStateChangedListener = (callback) =>
-  onAuthStateChanged(auth, callback);
+export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback);
