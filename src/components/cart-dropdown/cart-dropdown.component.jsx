@@ -1,7 +1,5 @@
 import { useContext } from "react";
-
 import { CartItemContext } from "../../context/cart-item.context";
-import { ProductsContext } from "../../context/products.context";
 
 import Button from "../button/button.component";
 import CartItem from "../cart-item/cart-item.component";
@@ -9,12 +7,13 @@ import CartItem from "../cart-item/cart-item.component";
 import "./cart-dropdown.styles.scss";
 
 const CartDropdown = () => {
-  const { products } = useContext(ProductsContext);
+  const { cartItems } = useContext(CartItemContext);
+  console.log(cartItems);
   return (
     <div className="cart-dropdown-container">
       <div className="cart-items">
-        {products.map((product, index) => (
-          <CartItem key={product.id} product={product} />
+        {cartItems.map((item) => (
+          <CartItem key={item.id} cartItem={item} />
         ))}
         <Button type="button">Go To Checkout</Button>
       </div>
