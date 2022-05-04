@@ -1,0 +1,44 @@
+.checkout-table-container {
+  display: flex;
+  justify-content: center;
+  min-width: 100%;
+  height: auto;
+
+  .checkout-table-header {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 20px;
+    row-gap: 30px;
+  }
+
+  .checkout-table-items {
+    text-align: center;
+  }
+
+  .table-header {
+    margin-left: 3.5rem;
+    margin-right: 2rem;
+  }
+
+  .description-header {
+    margin-left: 4.5rem;
+    margin-right: 4rem;
+  }
+
+  .price-header {
+    margin-left: 5.5rem;
+  }
+
+  .remove-header {
+    margin-left: 4.5rem;
+  }
+
+  .product-image-container {
+    margin-right: 2rem;
+    padding: 0;
+  }
+
+  .total-price {
+    float: right;
+  }
+}

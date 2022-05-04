@@ -17,11 +17,11 @@ root.render(
     <BrowserRouter>
       <UserProvider>
         <ProductsProvider>
-          <CartItemProvider>
-            <CartProvider>
+          <CartProvider>
+            <CartItemProvider>
               <App />
-            </CartProvider>
-          </CartItemProvider>
+            </CartItemProvider>
+          </CartProvider>
         </ProductsProvider>
       </UserProvider>
     </BrowserRouter>

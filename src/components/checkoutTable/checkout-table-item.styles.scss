@@ -1,0 +1,65 @@
+.checkoutTable-item-container {
+  .checkout-table-item {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 20px;
+    row-gap: 50px;
+    margin-bottom: 15px;
+    align-items: center;
+
+    .quantity {
+      display: grid;
+      grid-template-columns: repeat(3, 0.1fr);
+      align-items: center;
+    }
+
+    .price {
+      margin-left: 2.7rem;
+    }
+
+    .product-image {
+      height: 200px;
+    }
+
+    .decrement-quanity-icon-container {
+      height: 100%;
+      width: 70px;
+      // padding: 25px;
+      margin: 0 1rem;
+      cursor: pointer;
+
+      .decrement-quanity-icon {
+        height: 100%;
+        width: 70px;
+        padding: 25px;
+      }
+    }
+
+    .increment-quanity-icon-container {
+      height: 100%;
+      width: 70px;
+      padding: 25px;
+      cursor: pointer;
+
+      .increment-quanity-icon {
+        height: 100%;
+        width: 70px;
+        padding: 25px;
+      }
+    }
+
+    .remove {
+      text-align: center;
+      margin-left: 2rem;
+      border: none;
+      background-color: #fff;
+      cursor: pointer;
+
+      .remove-icon {
+        height: 100%;
+        width: 70px;
+        padding: 25px;
+      }
+    }
+  }
+}
