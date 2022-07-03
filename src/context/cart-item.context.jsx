@@ -46,12 +46,10 @@ export const CartItemProvider = ({ children }) => {
       0
     );
     setCartTotal(newCartTotal);
-    console.log(newCartTotal);
   }, [cartItems]);
 
   const addItemToCart = (productToAdd) => {
     setCartItems(addCartItem(cartItems, productToAdd));
-    console.log(cartItems);
   };
 
   const decrementCartItemQuantity = (cartItems, productToRemove) => {
@@ -74,7 +72,6 @@ export const CartItemProvider = ({ children }) => {
 
   const decrementItemQuantity = (productToRemove) => {
     setCartItems(decrementCartItemQuantity(cartItems, productToRemove));
-    console.log(cartItems);
   };
 
   const removeCartItem = (cartItems, productToRemove) => {
@@ -89,7 +86,6 @@ export const CartItemProvider = ({ children }) => {
     }
 
     setCartItems(newCartItems);
-    console.log(cartItems);
   };
 
   const removeItemFromCheckout = (productToRemove) => {

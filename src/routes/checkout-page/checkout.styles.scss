@@ -1,8 +1,9 @@
 .checkout-table-container {
   display: flex;
   justify-content: center;
-  min-width: 100%;
+  width: 100%;
   height: auto;
+  padding: 1rem 8rem;
 
   .checkout-table-header {
     display: grid;
@@ -25,8 +26,12 @@
     margin-right: 4rem;
   }
 
+  .quantity-header {
+    margin-left: 4rem;
+  }
+
   .price-header {
-    margin-left: 5.5rem;
+    margin-left: 7rem;
   }
 
   .remove-header {

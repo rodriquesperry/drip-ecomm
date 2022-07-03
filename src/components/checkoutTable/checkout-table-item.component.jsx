@@ -29,7 +29,7 @@ const TableItem = ({ checkoutItem }) => {
           >
             <LeftAngleBracket className="decrement-quanity-icon" />
           </div>
-          <span className="quantity-number-container">{quantity}</span>
+          <span className="quantity-number-container"><strong>{quantity}</strong></span>
           <div
             onClick={() => addItemToCart(checkoutItem)}
             className="increment-quanity-icon-container"

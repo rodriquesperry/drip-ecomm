@@ -6,19 +6,21 @@
     row-gap: 50px;
     margin-bottom: 15px;
     align-items: center;
+    margin-left: 1rem;
+    
+    .product-image {
+      height: 200px;
+    }
 
     .quantity {
       display: grid;
-      grid-template-columns: repeat(3, 0.1fr);
+      grid-template-columns: repeat(3, 0.4fr);
       align-items: center;
+      margin-left: 1rem;
     }
 
     .price {
-      margin-left: 2.7rem;
-    }
-
-    .product-image {
-      height: 200px;
+      margin-left: 4rem;
     }
 
     .decrement-quanity-icon-container {
@@ -50,10 +52,10 @@
 
     .remove {
       text-align: center;
-      margin-left: 2rem;
       border: none;
       background-color: #fff;
       cursor: pointer;
+      margin-left: 1.3rem;
 
       .remove-icon {
         height: 100%;

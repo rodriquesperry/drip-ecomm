@@ -15,11 +15,11 @@ const Checkout = () => {
       ) : (
         <div className="checkout-table">
           <div className="checkout-table-header">
-            <h4 className="table-header">Product</h4>
-            <h4 className="description-header table-header">Description</h4>
-            <h4 className="table-header">Quantity</h4>
-            <h4 className="price-header">Price</h4>
-            <h4 className="remove-header">Remove</h4>
+            <h3 className="table-header">Product</h3>
+            <h3 className="description-header table-header">Description</h3>
+            <h3 className="quantity-header">Quantity</h3>
+            <h3 className="price-header">Price</h3>
+            <h3 className="remove-header">Remove</h3>
           </div>
 
           <hr />
