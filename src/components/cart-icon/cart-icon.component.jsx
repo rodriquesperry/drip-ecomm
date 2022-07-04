@@ -5,7 +5,6 @@ import { CartItemContext } from "../../context/cart-item.context";
 import { ReactComponent as ShoppingCartIcon } from "../../asstes/shopping-bag.svg";
 
 import "./cart-icon.styles.scss";
-import { Route } from "react-router-dom";
 
 const CartIcon = () => {
   const { cartCount } = useContext(CartItemContext);

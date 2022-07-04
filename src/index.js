@@ -8,6 +8,7 @@ import { UserProvider } from "./context/user.context";
 import { CategoriesProvider } from "./context/categories.context";
 import { CartItemProvider } from "./context/cart-item.context";
 import { CartProvider } from "./context/cart.context";
+import { ProductProvider } from "./context/product.context";
 
 import "./index.scss";
 
@@ -17,11 +18,13 @@ root.render(
     <BrowserRouter>
       <UserProvider>
         <CategoriesProvider>
-          <CartProvider>
-            <CartItemProvider>
-              <App />
-            </CartItemProvider>
-          </CartProvider>
+          <ProductProvider>
+            <CartProvider>
+              <CartItemProvider>
+                <App />
+              </CartItemProvider>
+            </CartProvider>
+          </ProductProvider>
         </CategoriesProvider>
       </UserProvider>
     </BrowserRouter>

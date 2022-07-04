@@ -80,6 +80,7 @@ export const CartItemProvider = ({ children }) => {
     );
 
     const indexOfCartItem = cartItems.indexOf(existingCartItem);
+    
     const newCartItems = cartItems.splice(indexOfCartItem, 1);
     if (cartItems.length >= 0) {
       return [...cartItems];

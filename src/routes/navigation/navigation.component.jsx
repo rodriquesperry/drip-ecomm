@@ -20,7 +20,9 @@ const Navigation = () => {
     <Fragment>
       <div className="navigation">
         <Link className="logo-container" to="/">
-          <DripLogo className="logo" />
+          <div>
+            <DripLogo className="logo" />
+          </div>
         </Link>
         <div className="nav-links-container">
           <Link className="nav-link" to="/shop">
