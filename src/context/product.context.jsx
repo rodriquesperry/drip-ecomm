@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 
 export const ProductContext = createContext({
   product: {},
@@ -10,6 +10,7 @@ export const ProductProvider = ({ children }) => {
 
   const showDetailsPage = (product) => {
     setProduct(product);
+    console.log(product);
     return product;
   };
 

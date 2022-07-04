@@ -1,12 +1,18 @@
-import { useContext, Fragment } from "react";
+import { useContext, Fragment, useState, useEffect } from "react";
+
+import { CartItemContext } from "../../context/cart-item.context";
 import { ProductContext } from "../../context/product.context";
+
+import Button from "../../components/button/button.component";
 
 import "./product-detail.styles.scss";
 
 const ProductDetail = () => {
   const { product } = useContext(ProductContext);
-
   const { name, price, imageUrl } = product;
+
+  const { addItemToCart } = useContext(CartItemContext);
+  const addProductToCart = () => addItemToCart(product);
 
   return (
     <div className="product-detail-container">
@@ -30,8 +36,11 @@ const ProductDetail = () => {
             </select>
           </div>
         </form>
-        <h3 className='product-info-title'>PRODUCT INFO</h3>
-        <p className='product-info'>
+        <Button type="button" onClick={addProductToCart}>
+          Add To Cart
+        </Button>
+        <h3 className="product-info-title">PRODUCT INFO</h3>
+        <p className="product-info">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, et
           nisi? Voluptatem optio, nam maxime dolorum tempora quam doloremque
           dicta aperiam, voluptas facere recusandae, tenetur nesciunt vero

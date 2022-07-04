@@ -4,8 +4,6 @@ import CategoriesPreview from "../../routes/categories-preview/categories-previe
 import Category from "../../routes/category/category.component";
 import ProductDetail from "../product-detail/product-detail.component";
 
-import "./shop.styles.scss";
-
 const Shop = () => {
   return (
     <Routes>

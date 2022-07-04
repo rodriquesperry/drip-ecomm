@@ -12,6 +12,7 @@
     height: 95%;
     object-fit: contain;
     margin-bottom: 5px;
+    border: 5px solid black;
   }
 
   button {
@@ -34,15 +35,14 @@
   }
 
   .footer {
-    width: 70%;
+    width: 90%;
     height: 5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: 18px;
-    
 
     .name {
-      width: 90%;
+      width: 100%;
       margin-bottom: 15px;
     }
 
