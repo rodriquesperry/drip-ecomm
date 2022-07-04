@@ -1,6 +1,7 @@
 .product-detail-container {
   display: flex;
   flex-direction: row;
+  margin-top: 3.5rem;
 
   .product-detail-image {
       width: 40%;
@@ -13,13 +14,18 @@
   }
 
   .product-details {
-    margin-left: 10px;
+    margin: 10px 10px 0;
     width: 50%;
     text-align: center;
 
-    hr {
-      margin-top: 3.5rem;
-      width: 80%;
+    .product-info-title {
+        margin-top: 4rem;
+        text-align: start;
+        border-bottom: 1px solid rgba(3, 3, 3, 0.432);
+    }
+
+    .product-info {
+        text-align: start;
     }
   }
 }

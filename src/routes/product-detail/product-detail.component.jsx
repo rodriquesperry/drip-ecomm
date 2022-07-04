@@ -15,6 +15,7 @@ const ProductDetail = () => {
       </div>
       <div className="product-details">
         <hr />
+        <br />
         <h2>{name}</h2>
         <h4>${price}</h4>
         <p>All taxes and duties included</p>
@@ -29,6 +30,18 @@ const ProductDetail = () => {
             </select>
           </div>
         </form>
+        <h3 className='product-info-title'>PRODUCT INFO</h3>
+        <p className='product-info'>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, et
+          nisi? Voluptatem optio, nam maxime dolorum tempora quam doloremque
+          dicta aperiam, voluptas facere recusandae, tenetur nesciunt vero
+          soluta reiciendis vel earum. Assumenda quae at rem corrupti sit nobis
+          veritatis, similique distinctio ipsa dolor qui quaerat repellendus
+          dolore molestias cumque rerum iusto possimus ab aliquid? Labore, harum
+          quas! Saepe dolor aut natus minima enim voluptatum ex consectetur illo
+          doloremque consequuntur. Sed sunt voluptate dolorum suscipit eum
+          fugit, accusamus pariatur, nisi veritatis adipisci repudiandae.
+        </p>
       </div>
     </div>
   );
