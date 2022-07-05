@@ -1,12 +1,12 @@
-import { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
-import Button from "../button/button.component";
+import Button from '../button/button.component';
 
-import { CartItemContext } from "../../context/cart-item.context";
-import { ProductContext } from "../../context/product.context";
+import { CartItemContext } from '../../context/cart-item.context';
+import { ProductContext } from '../../context/product.context';
 
-import "./product-card.styles.scss";
+import './product-card.styles.scss';
 
 const ProductCard = ({ product }) => {
   const { id, name, price, imageUrl } = product;
@@ -16,8 +16,8 @@ const ProductCard = ({ product }) => {
   const addProductToCart = () => addItemToCart(product);
 
   return (
-    <div className="product-card-container">
-      <Link className="title" to={`product-detail/${id}`}>
+    <div className='product-card-container'>
+      <Link className='title' to={`/product-detail/${id}`}>
         <img
           src={imageUrl}
           alt={`${name}`}
@@ -26,11 +26,11 @@ const ProductCard = ({ product }) => {
           }}
         />
       </Link>
-      <div className="footer">
-        <span className="name">{name}</span>
-        <span className="price">${price}</span>
+      <div className='footer'>
+        <span className='name'>{name}</span>
+        <span className='price'>${price}</span>
       </div>
-      <Button buttonType="inverted" onClick={addProductToCart}>
+      <Button buttonType='inverted' onClick={addProductToCart}>
         Add To Cart
       </Button>
     </div>
