@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import FormInput from '../formInput/form-input.component';
 import TextAreaInput from '../text-input/TextAreaInput.component';
@@ -22,6 +22,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    resetFormFields();
   };
 
   const handleChange = (e) => {
