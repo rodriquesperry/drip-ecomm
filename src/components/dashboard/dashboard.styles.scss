@@ -1,0 +1,49 @@
+
+.card-section {
+  display: flex !important;
+}
+
+.dashboard-card-container {
+  height: calc(100% - 64px);
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-gap: 25px;
+  grid-template-rows: 2fr;
+  padding: 1rem 1rem;
+  overflow-y: scroll;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    box-shadow: 3px 3px rgba(61, 61, 61, 0.301),
+      -0.5em 0 0.4em rgba(0, 0, 0, 0.295);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 1rem 2rem;
+  }
+
+  .card a {
+    display: flex;
+    justify-content: end;
+  }
+
+  .card-title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pie-chart-container {
+    padding-top: 0.2rem;
+
+    .card {
+      height: 420px;
+    }
+  }
+
+  .inventory-card-container {
+    grid-column: span 2;
+  }
+}

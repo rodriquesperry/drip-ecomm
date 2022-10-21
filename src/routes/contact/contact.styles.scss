@@ -1,0 +1,18 @@
+.contact-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.contact-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-header p {
+    color: grey;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+}

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartItemContext } from "../../context/cart-item.context";
 
@@ -9,6 +9,7 @@ import { ReactComponent as Remove } from "../../asstes/x.svg";
 import "./cart-dropdown.styles.scss";
 
 const CartDropdown = () => {
+
   const { cartItems } = useContext(CartItemContext);
   const navigate = useNavigate();
 

@@ -13,7 +13,7 @@ export const UserContext = createContext({
 
 // Actual component
 export const UserProvider = ({ children }) => {
-  // We want to store a current user object and set the object/This is fir the state
+  // We want to store a current user object and set the object/This is for the state
   const [currentUser, setCurrentUser] = useState(null);
   // We want to generate the value of the value attribute
   const value = { currentUser, setCurrentUser };

@@ -1,0 +1,13 @@
+.progressbar-container .card {
+    grid-row: span 2 / auto;
+}
+
+.progressbar-container .card h4 {
+    display: flex;
+    justify-content: end;
+}
+
+small {
+    color: green;
+    font-weight: lighter;
+}

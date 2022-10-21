@@ -1,19 +1,18 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import Button from "../button/button.component";
-import FormInput from "../formInput/form-input.component";
-
+import Button from '../button/button.component';
+import FormInput from '../formInput/form-input.component';
 
 import {
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
-} from "../../utils/firebase/firebase.utils";
+} from '../../utils/firebase/firebase.utils';
 
-import "./sign-in-form.styles.scss";
+import './sign-in-form.styles.scss';
 
 const defaultFormFields = {
-  email: "",
-  password: "",
+  email: '',
+  password: '',
 };
 
 const SignInForm = () => {
@@ -39,11 +38,11 @@ const SignInForm = () => {
       resetFormFields();
     } catch (error) {
       switch (error.code) {
-        case "auth/wrong-password":
-          alert("You entered in the wrong email and password combination!");
+        case 'auth/wrong-password':
+          alert('You entered in the wrong email and password combination!');
           break;
-        case "auth/user-not-found":
-          alert("No email associated with email!");
+        case 'auth/user-not-found':
+          alert('No email associated with email!');
           break;
         default:
           console.log(error);
@@ -57,38 +56,41 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="sign-up-container">
+    <div className='sign-up-container'>
       <h1>Sign In Page</h1>
       <h2>Already have an account?</h2>
       <span>Sign-in with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
-          label="Email"
+          label='Email'
           inputOptions={{
-            type: "email",
+            type: 'email',
             required: true,
             onChange: handleChange,
-            name: "email",
+            name: 'email',
             value: email,
           }}
         />
 
         <FormInput
-          label="Password"
+          label='Password'
           inputOptions={{
-            type: "password",
+            type: 'password',
             required: true,
             onChange: handleChange,
-            name: "password",
+            name: 'password',
             value: password,
           }}
         />
-        <div className="buttons-container">
-          <Button type="submit">Sign In</Button>
-          <Button type="button" buttonType="google" onClick={signInWithGoogle}>
-            Google Sign In
-          </Button>
+        <div className='buttons-container'>
+          <Button type='submit'>Sign In</Button>
         </div>
+        <br />
+        <h4>...Or sign in with Google</h4>
+        <br />
+        <Button type='button' buttonType='google' onClick={signInWithGoogle}>
+          Google Sign In
+        </Button>
       </form>
     </div>
   );

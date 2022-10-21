@@ -1,0 +1,17 @@
+#notification-popover {
+  width: 30rem;
+  border: 1px solid black;
+
+  .popover-header {
+    background-color: rgba(0, 102, 255, 0.349);
+    border: 1px solid black;
+  }
+
+  a:hover {
+    color: #333;
+  }
+
+  .popover-icon {
+    margin-right: 1rem;
+  }
+}
